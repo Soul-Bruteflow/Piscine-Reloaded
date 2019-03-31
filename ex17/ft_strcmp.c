@@ -6,11 +6,11 @@
 /*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 15:11:56 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/03/31 15:15:17 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/03/31 16:03:11 by bruteflow        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, const char *s2)
+int		ft_strcmp(char *s1, char *s2)
 {
 	unsigned long	i;
 	int				reslt;
