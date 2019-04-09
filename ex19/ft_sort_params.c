@@ -3,33 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 15:55:25 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/03/31 16:04:49 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 10:52:25 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void				ft_putchar(char c);
-void				ft_putstr(char *str);
-void				ft_swap(char **s1, char **s2);
-int					ft_strcmp(char *s1, char *s2);
-void				ft_sort_params(int ac, char **av);
-
-int					main(int argc, char **argv)
-{
-	int				i;
-
-	i = 1;
-	ft_sort_params(argc, argv);
-	while (i < argc)
-	{
-		ft_putstr(argv[i]);
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
-}
 
 void				ft_putstr(char *s)
 {
@@ -86,4 +65,19 @@ void				ft_sort_params(int ac, char **av)
 		else
 			i++;
 	}
+}
+
+int					main(int argc, char **argv)
+{
+	int				i;
+
+	i = 1;
+	ft_sort_params(argc, argv);
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
+	}
+	return (0);
 }

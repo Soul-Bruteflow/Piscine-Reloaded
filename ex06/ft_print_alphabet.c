@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 11:45:32 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/03/31 11:49:10 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 10:43:49 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void		ft_putchar(char c);
 
 void		ft_print_alphabet(void)
 {

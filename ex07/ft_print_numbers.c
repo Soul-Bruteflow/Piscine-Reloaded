@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 12:29:11 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/03/31 12:30:13 by bruteflow        ###   ########.fr       */
+/*   Updated: 2019/04/09 10:45:53 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void		ft_putchar(char c);
 
 void		ft_print_numbers(void)
 {
