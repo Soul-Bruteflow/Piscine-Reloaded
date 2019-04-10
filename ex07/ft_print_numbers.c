@@ -6,7 +6,7 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 12:29:11 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/04/09 10:45:53 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/10 11:33:02 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void		ft_print_numbers(void)
 {
 	short	i;
+	char	c;
 
 	i = 48;
 	while (i <= 57)
 	{
-		ft_putchar((char)i);
+		c = (char)i;
+		write(1, &c, 1);
 		i++;
 	}
 }

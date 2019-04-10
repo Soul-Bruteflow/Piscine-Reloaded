@@ -6,7 +6,7 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 12:34:51 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/04/09 10:46:11 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/10 11:34:02 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,16 @@
 
 void	ft_is_negative(int n)
 {
+	char c;
+
 	if (n < 0)
-		ft_putchar('N');
+	{
+		c = 'N';
+		write(1, &c, 1);
+	}
 	else
-		ft_putchar('P');
+	{
+		c = 'P';
+		write(1, &c, 1);
+	}
 }

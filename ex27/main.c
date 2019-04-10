@@ -6,53 +6,57 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 18:21:46 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/04/09 10:53:48 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/10 10:53:37 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <fcntl.h>
+#include <unistd.h>
 
-void	ft_putchar_fd(int fd, char c)
+#define BUF_SIZE 4096
+
+void	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_putstr(char *str)
 {
-	size_t	i;
+	int index;
 
-	if (s)
+	index = 0;
+	while (str[index] != '\0')
 	{
-		i = 0;
-		while (s[i] != '\0')
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		ft_putchar(str[index]);
+		index++;
 	}
-}
-
-void	ft_display_file(char *file_name)
-{
-	int		file;
-	char	buf;
-
-	file = open(file_name, O_RDONLY);
-	while (read(file, &buf, 1) == 1)
-	{
-		write(1, &buf, 1);
-	}
-	close(file);
 }
 
 int		main(int argc, char **argv)
 {
-	if (argc == 1)
-		ft_putstr_fd("File name missing.\n", 2);
-	else if (argc == 2)
-		ft_display_file(argv[1]);
-	else if (argc > 2)
-		ft_putstr_fd("Too many arguments.\n", 2);
+	int		fd;
+	int		ret;
+	char	buf[BUF_SIZE + 1];
+
+	if (argc < 2)
+	{
+		write(2, "No file name.\n", 19);
+		return (1);
+	}
+	if (argc > 2)
+	{
+		write(2, "Too many arguments.\n", 20);
+		return (1);
+	}
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
+		write(2, "Open() failed.\n", 14);
+	ret = read(fd, buf, BUF_SIZE);
+	buf[ret] = '\0';
+	ft_putstr(buf);
+	if (close(fd) == -1)
+	{
+		ft_putstr("close() failed\n");
+	}
 	return (0);
 }

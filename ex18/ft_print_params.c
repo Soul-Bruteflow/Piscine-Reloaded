@@ -6,9 +6,16 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 15:20:27 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/04/09 10:48:03 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/10 11:20:44 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
+
+void				ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void				ft_putstr(char *s)
 {

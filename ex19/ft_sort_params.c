@@ -6,9 +6,11 @@
 /*   By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/31 15:55:25 by bruteflow         #+#    #+#             */
-/*   Updated: 2019/04/09 10:52:25 by mvlad            ###   ########.fr       */
+/*   Updated: 2019/04/10 11:38:47 by mvlad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void				ft_putstr(char *s)
 {
@@ -19,7 +21,7 @@ void				ft_putstr(char *s)
 		i = 0;
 		while (s[i] != '\0')
 		{
-			ft_putchar(s[i]);
+			write(1, &s[i], 1);
 			i++;
 		}
 	}
@@ -52,7 +54,7 @@ int					ft_strcmp(char *s1, char *s2)
 
 void				ft_sort_params(int ac, char **av)
 {
-	int		i;
+	int				i;
 
 	i = 1;
 	while (i < ac - 1)
@@ -70,13 +72,15 @@ void				ft_sort_params(int ac, char **av)
 int					main(int argc, char **argv)
 {
 	int				i;
+	char			c;
 
 	i = 1;
+	c = '\n';
 	ft_sort_params(argc, argv);
 	while (i < argc)
 	{
 		ft_putstr(argv[i]);
-		ft_putchar('\n');
+		write(1, &c, 1);
 		i++;
 	}
 	return (0);

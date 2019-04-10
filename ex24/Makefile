@@ -3,49 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bruteflow <bruteflow@student.42.fr>        +#+  +:+       +#+         #
+#    By: mvlad <mvlad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/31 17:51:42 by bruteflow         #+#    #+#              #
-#    Updated: 2019/03/31 17:54:11 by bruteflow        ###   ########.fr        #
+#    Updated: 2019/04/10 10:54:32 by mvlad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-PATH_SRC = ./srcs/
-PATH_OBJ = ./
-PATH_HEAD = ./includes/
 
-SRC	= 	$(PATH_SRC)ft_putchar.c \
-		$(PATH_SRC)ft_putstr.c \
-		$(PATH_SRC)ft_strcmp.c \
-		$(PATH_SRC)ft_strlen.c \
-		$(PATH_SRC)ft_swap.c
+OUT = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 
-OBJECT	= $(SRC:.c=.o)
-HEADERS	= $(PATH_HEAD)
-
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-OPTIONS	= -c
-HOPTIONS = -I $(HEADERS)
-
-AR		= ar
-ARFLAGS	= rc
-RLIB	= ranlib
-
-RMF 	= rm -f
+INCLUDES = includes/
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(OPTIONS) $(CFLAGS) $(SRC) $(HOPTIONS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJECT)
-	$(RLIB) $(NAME)
+    gcc -Wall -Wextra -Werror -c ./srcs/ft_*.c -I $(INCLUDES)
+    ar rc $(NAME) $(OUT)
+    ranlib $(NAME)
 
 clean:
-	$(RMF) $(OBJECT)
+    /bin/rm -f $(OUT)
 
 fclean: clean
-	$(RMF) $(NAME)
+    /bin/rm -f $(NAME)
 
 re: fclean all
